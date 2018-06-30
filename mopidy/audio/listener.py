@@ -26,6 +26,14 @@ class AudioListener(listener.Listener):
         """
         pass
 
+    def reached_end_of_track(self):
+        """
+        Called whenever the end of the audio track is reached.
+
+        *MAY* be implemented by actor.
+        """
+        pass
+
     def stream_changed(self, uri):
         """
         Called whenever the audio stream changes.

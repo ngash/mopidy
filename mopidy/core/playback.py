@@ -121,6 +121,15 @@ class PlaybackController:
         else:
             return 0
 
+    # Methods
+
+    def _on_end_of_track(self):
+        self._on_about_to_finish()
+        if self._pending_tl_track:
+            self.play()
+        else:
+            self._on_end_of_stream()
+
     def _on_end_of_stream(self):
         self.set_state(PlaybackState.STOPPED)
         if self._current_tl_track:

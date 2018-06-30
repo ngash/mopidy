@@ -81,6 +81,9 @@ class Core(
     def reached_end_of_stream(self):
         self.playback._on_end_of_stream()
 
+    def reached_end_of_track(self):
+        self.playback._on_end_of_track()
+
     def stream_changed(self, uri):
         self.playback._on_stream_changed(uri)
 
